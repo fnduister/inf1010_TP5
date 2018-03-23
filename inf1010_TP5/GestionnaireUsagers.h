@@ -14,7 +14,7 @@
 class GestionnaireUsagers:public GestionnaireGenerique<Usager, set<Usager*>, SupprimerUsager, AjouterUsager>
 {
 public:
-//	GestionnaireUsagers() :GestionnaireGenerique(){};
+	GestionnaireUsagers();;
 private:
 };
 

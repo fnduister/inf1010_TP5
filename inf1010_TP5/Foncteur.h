@@ -135,11 +135,10 @@ Méthodes :
 */
 class AjouterUsager
 {
-	AjouterUsager(set<Usager*> setIn):set_(setIn){};
 public:
-	auto& operator()(Usager* usager){
+	AjouterUsager(set<Usager*>& setIn):set_(setIn){};
+	void operator()(Usager* usager){
 		auto itrInsert = set_.insert(usager);
-		return set_;
 	};
 private:
 	set<Usager*> &set_;

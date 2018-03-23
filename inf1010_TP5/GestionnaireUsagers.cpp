@@ -6,3 +6,6 @@
 
 #include "GestionnaireUsagers.h"
 
+GestionnaireUsagers::GestionnaireUsagers(): GestionnaireGenerique()
+{
+}

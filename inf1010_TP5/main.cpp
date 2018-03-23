@@ -20,15 +20,15 @@ int main()
     GestionnaireUsagers poly;
     Client ratus;
 	//ratus.modifierReference(genIdUsager());
- //   Client gaspard("Donada--Vidal", "Gaspard", genIdUsager(), "P4R 1I5", 1997);
- //   Client rick("S", "Rick", genIdUsager(), "HF1 8H3", 20012003);
- //   ClientPremium marou;
-	//marou.modifierReference(genIdUsager());
+    Client gaspard("Donada--Vidal", "Gaspard", genIdUsager(), "P4R 1I5", 1997);
+    Client rick("S", "Rick", genIdUsager(), "HF1 8H3", 20012003);
+    ClientPremium marou;
+	marou.modifierReference(genIdUsager());
  //   ClientPremium julie("Cash", "Julie", genIdUsager(), "HZ9 1J4", 19141918, 50);
  //   Fournisseur mina;
 	//mina.modifierReference(genIdUsager());
  //   Fournisseur martine("BoduitAuxEncheres sculpture;
-	//sculpture.modifierReference(genIdProduit());
+//	sculpture.modifierReference(genIdProduit());
  //   ProduitAuxEncheres violoncelle(&martine, "violoncelle", genIdProduit(), 5000.0);
  //   ProduitSolde saladier;
 	//saladier.modifierReference(genIdProduit());
@@ -40,12 +40,12 @@ int main()
  //   Produit stylo(&samuel, "stylo", genIdProduit(), 3.0);
  //   Prontre", genIdProduit(), 100.0, 30);
  //   ProduitSolde nem(&samuel, "nem crevettes", genIdProduit(), 2.0);
- //   poly.ajouter(&gaspard);
- //   poly.ajouter(&rick);
+    poly.ajouter(&gaspard);
+    poly.ajouter(&rick);
  //   poly.ajouter(&martine);
  //   poly.ajouter(&samuel);
      poly.ajouter(&ratus);
- //   poly.ajouter(&marou);
+    poly.ajouter(&marou);
  //   poly.ajouter(&mina);
  //   poly.ajouter(&julie);
 
