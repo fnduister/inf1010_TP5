@@ -54,6 +54,9 @@
     <ClCompile Include="Foncteur.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GestionnaireGenerique.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Client.h">

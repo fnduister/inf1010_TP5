@@ -7,7 +7,15 @@
 #pragma once
 
 #include "GestionnaireGenerique.h"
+#include "Produit.h"
+#include "Foncteur.h"
+#include <set>
 
+class GestionnaireProduits: GestionnaireGenerique<Produit, multimap<int,Produit*>, SupprimerProduit, AjouterProduit>
+{
+public:
+private:	
+};
 // TODO : Créer la classe GestionnaireProduits
 
 // TODO : Méthodes :

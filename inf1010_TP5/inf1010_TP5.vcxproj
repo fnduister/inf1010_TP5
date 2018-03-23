@@ -120,6 +120,7 @@
     <ClCompile Include="Foncteur.cpp" />
     <ClCompile Include="Fournisseur.cpp" />
     <ClCompile Include="Gestionnaire.cpp" />
+    <ClCompile Include="GestionnaireGenerique.cpp" />
     <ClCompile Include="GestionnaireProduits.cpp" />
     <ClCompile Include="GestionnaireUsagers.cpp" />
     <ClCompile Include="main.cpp" />

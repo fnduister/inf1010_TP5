@@ -7,6 +7,16 @@
 #pragma once
 
 #include "GestionnaireGenerique.h"
+#include "Usager.h"
+#include <set>
+#include "Foncteur.h"
+
+class GestionnaireUsagers:public GestionnaireGenerique<Usager, set<Usager*>, SupprimerUsager, AjouterUsager>
+{
+public:
+//	GestionnaireUsagers() :GestionnaireGenerique(){};
+private:
+};
 
 // TODO : Créer la classe GestionnaireUsager
 

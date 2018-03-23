@@ -19,44 +19,44 @@ int main()
 	FoncteurGenerateurId genIdUsager, genIdProduit;
     GestionnaireUsagers poly;
     Client ratus;
-	ratus.modifierReference(genIdUsager());
-    Client gaspard("Donada--Vidal", "Gaspard", genIdUsager(), "P4R 1I5", 1997);
-    Client rick("S", "Rick", genIdUsager(), "HF1 8H3", 20012003);
-    ClientPremium marou;
-	marou.modifierReference(genIdUsager());
-    ClientPremium julie("Cash", "Julie", genIdUsager(), "HZ9 1J4", 19141918, 50);
-    Fournisseur mina;
-	mina.modifierReference(genIdUsager());
-    Fournisseur martine("Bellaiche", "Martine", genIdUsager(), "H4C 8D4");
-    Fournisseur samuel("Kadoury", "Samuel", genIdUsager(), "H1G 2G4");
-    Produit sel;
-	sel.modifierReference(genIdProduit());
-    Produit chaussures(&martine, "chaussures", genIdProduit(), 40.0);
-    Produit stylo(&samuel, "stylo", genIdProduit(), 3.0);
-    ProduitAuxEncheres sculpture;
-	sculpture.modifierReference(genIdProduit());
-    ProduitAuxEncheres violoncelle(&martine, "violoncelle", genIdProduit(), 5000.0);
-    ProduitSolde saladier;
-	saladier.modifierReference(genIdProduit());
-    ProduitSolde montre(&mina, "montre", genIdProduit(), 100.0, 30);
-    ProduitSolde nem(&samuel, "nem crevettes", genIdProduit(), 2.0);
-    poly.ajouter(&gaspard);
-    poly.ajouter(&rick);
-    poly.ajouter(&martine);
-    poly.ajouter(&samuel);
-    poly.ajouter(&ratus);
-    poly.ajouter(&marou);
-    poly.ajouter(&mina);
-    poly.ajouter(&julie);
+	//ratus.modifierReference(genIdUsager());
+ //   Client gaspard("Donada--Vidal", "Gaspard", genIdUsager(), "P4R 1I5", 1997);
+ //   Client rick("S", "Rick", genIdUsager(), "HF1 8H3", 20012003);
+ //   ClientPremium marou;
+	//marou.modifierReference(genIdUsager());
+ //   ClientPremium julie("Cash", "Julie", genIdUsager(), "HZ9 1J4", 19141918, 50);
+ //   Fournisseur mina;
+	//mina.modifierReference(genIdUsager());
+ //   Fournisseur martine("BoduitAuxEncheres sculpture;
+	//sculpture.modifierReference(genIdProduit());
+ //   ProduitAuxEncheres violoncelle(&martine, "violoncelle", genIdProduit(), 5000.0);
+ //   ProduitSolde saladier;
+	//saladier.modifierReference(genIdProduit());
+ //   ProduitSolde montre(&mina, "mellaiche", "Martine", genIdUsager(), "H4C 8D4");
+ //   Fournisseur samuel("Kadoury", "Samuel", genIdUsager(), "H1G 2G4");
+ //   Produit sel;
+	//sel.modifierReference(genIdProduit());
+ //   Produit chaussures(&martine, "chaussures", genIdProduit(), 40.0);
+ //   Produit stylo(&samuel, "stylo", genIdProduit(), 3.0);
+ //   Prontre", genIdProduit(), 100.0, 30);
+ //   ProduitSolde nem(&samuel, "nem crevettes", genIdProduit(), 2.0);
+ //   poly.ajouter(&gaspard);
+ //   poly.ajouter(&rick);
+ //   poly.ajouter(&martine);
+ //   poly.ajouter(&samuel);
+     poly.ajouter(&ratus);
+ //   poly.ajouter(&marou);
+ //   poly.ajouter(&mina);
+ //   poly.ajouter(&julie);
 
-    vector<bool> tests;
+ //   vector<bool> tests;
 
     // TEST 01 : le constructeur par défaut de client doit fonctionner
-    tests.push_back(ratus.obtenirNom() == "Doe" &&
-                    ratus.obtenirPrenom() == "John" &&
-                    ratus.obtenirReference() == 0 &&
-                    ratus.obtenirCodePostal() == "A1A A1A" &&
-                    ratus.obtenirCodeClient() == 0);
+    //tests.push_back(ratus.obtenirNom() == "Doe" &&
+    //                ratus.obtenirPrenom() == "John" &&
+    //                ratus.obtenirReference() == 0 &&
+    //                ratus.obtenirCodePostal() == "A1A A1A" &&
+    //                ratus.obtenirCodeClient() == 0);
  //   // TEST 02 : le constructeur par paramètres de client doit fonctionner
  //   tests.push_back(gaspard.obtenirNom() == "Donada--Vidal" &&
  //                   gaspard.obtenirPrenom() == "Gaspard" &&
@@ -303,5 +303,6 @@ int main()
  //       else
  //           cout << "ECHEC" << endl;
  //   }
+	int maman;
     return 0;
 }
