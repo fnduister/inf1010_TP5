@@ -17,174 +17,174 @@ using namespace std;
 int main()
 {
 	FoncteurGenerateurId genIdUsager, genIdProduit;
-    GestionnaireUsagers poly;
-    Client ratus;
-	//ratus.modifierReference(genIdUsager());
-    Client gaspard("Donada--Vidal", "Gaspard", genIdUsager(), "P4R 1I5", 1997);
-    Client rick("S", "Rick", genIdUsager(), "HF1 8H3", 20012003);
-    ClientPremium marou;
+	GestionnaireUsagers poly;
+	Client ratus;
+	ratus.modifierReference(genIdUsager());
+	Client gaspard("Donada--Vidal", "Gaspard", genIdUsager(), "P4R 1I5", 1997);
+	Client rick("S", "Rick", genIdUsager(), "HF1 8H3", 20012003);
+	ClientPremium marou;
 	marou.modifierReference(genIdUsager());
- //   ClientPremium julie("Cash", "Julie", genIdUsager(), "HZ9 1J4", 19141918, 50);
- //   Fournisseur mina;
-	//mina.modifierReference(genIdUsager());
- //   Fournisseur martine("BoduitAuxEncheres sculpture;
-//	sculpture.modifierReference(genIdProduit());
- //   ProduitAuxEncheres violoncelle(&martine, "violoncelle", genIdProduit(), 5000.0);
- //   ProduitSolde saladier;
-	//saladier.modifierReference(genIdProduit());
- //   ProduitSolde montre(&mina, "mellaiche", "Martine", genIdUsager(), "H4C 8D4");
- //   Fournisseur samuel("Kadoury", "Samuel", genIdUsager(), "H1G 2G4");
- //   Produit sel;
-	//sel.modifierReference(genIdProduit());
- //   Produit chaussures(&martine, "chaussures", genIdProduit(), 40.0);
- //   Produit stylo(&samuel, "stylo", genIdProduit(), 3.0);
- //   Prontre", genIdProduit(), 100.0, 30);
- //   ProduitSolde nem(&samuel, "nem crevettes", genIdProduit(), 2.0);
-    poly.ajouter(&gaspard);
-    poly.ajouter(&rick);
- //   poly.ajouter(&martine);
- //   poly.ajouter(&samuel);
-     poly.ajouter(&ratus);
-    poly.ajouter(&marou);
- //   poly.ajouter(&mina);
- //   poly.ajouter(&julie);
+	ClientPremium julie("Cash", "Julie", genIdUsager(), "HZ9 1J4", 19141918, 50);
+	Fournisseur mina;
+	mina.modifierReference(genIdUsager());
+	Fournisseur martine("Bellaiche", "Martine", genIdUsager(), "H4C 8D4");
+	Fournisseur samuel("Kadoury", "Samuel", genIdUsager(), "H1G 2G4");
+	Produit sel;
+	sel.modifierReference(genIdProduit());
+	Produit chaussures(&martine, "chaussures", genIdProduit(), 40.0);
+	Produit stylo(&samuel, "stylo", genIdProduit(), 3.0);
+	ProduitAuxEncheres sculpture;
+	sculpture.modifierReference(genIdProduit());
+	ProduitAuxEncheres violoncelle(&martine, "violoncelle", genIdProduit(), 5000.0);
+	ProduitSolde saladier;
+	saladier.modifierReference(genIdProduit());
+	ProduitSolde montre(&mina, "montre", genIdProduit(), 100.0, 30);
+	ProduitSolde nem(&samuel, "nem crevettes", genIdProduit(), 2.0);
+	poly.ajouter(&gaspard);
+	poly.ajouter(&rick);
+	poly.ajouter(&martine);
+	poly.ajouter(&samuel);
+	poly.ajouter(&ratus);
+	poly.ajouter(&marou);
+	poly.ajouter(&mina);
+	poly.ajouter(&julie);
 
- //   vector<bool> tests;
+    vector<bool> tests;
 
-    // TEST 01 : le constructeur par défaut de client doit fonctionner
-    //tests.push_back(ratus.obtenirNom() == "Doe" &&
-    //                ratus.obtenirPrenom() == "John" &&
-    //                ratus.obtenirReference() == 0 &&
-    //                ratus.obtenirCodePostal() == "A1A A1A" &&
-    //                ratus.obtenirCodeClient() == 0);
- //   // TEST 02 : le constructeur par paramètres de client doit fonctionner
- //   tests.push_back(gaspard.obtenirNom() == "Donada--Vidal" &&
- //                   gaspard.obtenirPrenom() == "Gaspard" &&
- //                   gaspard.obtenirReference() == 1 &&
- //                   gaspard.obtenirCodePostal() == "P4R 1I5" &&
- //                   gaspard.obtenirCodeClient() == 1997);
- //   // TEST 03 : le constructeur par défaut de client premium doit fonctionner
- //   tests.push_back(marou.obtenirNom() == "Doe" &&
- //                   marou.obtenirPrenom() == "John" &&
- //                   marou.obtenirReference() == 3 && //
- //                   marou.obtenirCodePostal() == "A1A A1A" &&
- //                   marou.obtenirCodeClient() == 0 &&
- //                   marou.obtenirJoursRestants() == 0);
- //   // TEST 04 : le constructeur par paramètres de client premium doit fonctionner
- //   tests.push_back(julie.obtenirNom() == "Cash" &&
- //                   julie.obtenirPrenom() == "Julie" &&
- //                   julie.obtenirReference() == 4 &&
- //                   julie.obtenirCodePostal() == "HZ9 1J4" &&
- //                   julie.obtenirCodeClient() == 19141918 &&
- //                   julie.obtenirJoursRestants() == 50);
- //   // TEST 05 : le constructeur par défaut de fournisseur doit fonctionner
- //   tests.push_back(mina.obtenirNom() == "Doe" &&
- //                   mina.obtenirPrenom() == "John" &&
- //                   mina.obtenirReference() == 5 &&
- //                   mina.obtenirCodePostal() == "A1A A1A");
- //   // TEST 06 : le constructeur par paramètres de fournisseur doit fonctionner
- //   tests.push_back(martine.obtenirNom() == "Bellaiche" &&
- //                   martine.obtenirPrenom() == "Martine" &&
- //                   martine.obtenirReference() == 6 &&
- //                   martine.obtenirCodePostal() == "H4C 8D4");
- //   // TEST 07 : le constructeur par défaut de produit doit fonctionner
- //   tests.push_back(sel.obtenirNom() == "outil" &&
- //                   sel.obtenirReference() == 0 &&
- //                   sel.obtenirFournisseur() == nullptr &&
- //                   sel.obtenirPrix() == 0.0);
- //   // TEST 08 : le constructeur par paramètres de produit doit fonctionner
- //   tests.push_back(stylo.obtenirNom() == "stylo" &&
- //                   stylo.obtenirReference() == 2 &&
- //                   stylo.obtenirFournisseur() == &samuel &&
- //                   stylo.obtenirPrix() == 3.0);
- //   // TEST 09 : le constructeur par défaut de produit aux enchères doit fonctionner
- //   tests.push_back(sculpture.obtenirNom() == "outil" &&
- //                   sculpture.obtenirReference() == 3 &&
- //                   sculpture.obtenirFournisseur() == nullptr &&
- //                   sculpture.obtenirPrix() == 0.0 &&
- //                   sculpture.obtenirPrixInitial() == 0.0);
- //   // TEST 10 : le constructeur par paramètres de produit aux enchères doit fonctionner
- //   tests.push_back(violoncelle.obtenirNom() == "violoncelle" &&
- //                   violoncelle.obtenirReference() == 4 &&
- //                   violoncelle.obtenirFournisseur() == &martine &&
- //                   violoncelle.obtenirPrix() == 5000.0 &&
- //                   violoncelle.obtenirPrixInitial() == 5000.0);
- //   // TEST 11 : le constructeur par défaut de produit soldé doit fonctionner
- //   tests.push_back(saladier.obtenirNom() == "outil" &&
- //                   saladier.obtenirReference() == 5 &&
- //                   saladier.obtenirFournisseur() == nullptr &&
- //                   saladier.obtenirPrix() == 0.0 &&
- //                   saladier.obtenirPourcentageRabais() == 0);
- //   // TEST 12 : le constructeur par paramètres de produit soldé doit fonctionner
- //   tests.push_back(nem.obtenirNom() == "nem crevettes" &&
- //                   nem.obtenirReference() == 7 &&
- //                   nem.obtenirFournisseur() == &samuel &&
- //                   nem.obtenirPrix() == 2 &&
- //                   nem.obtenirPourcentageRabais() == 0);
+     //TEST 01 : le constructeur par défaut de client doit fonctionner
+    tests.push_back(ratus.obtenirNom() == "Doe" &&
+                    ratus.obtenirPrenom() == "John" &&
+                    ratus.obtenirReference() == 0 &&
+                    ratus.obtenirCodePostal() == "A1A A1A" &&
+                    ratus.obtenirCodeClient() == 0);
+	 //TEST 02 : le constructeur par paramètres de client doit fonctionner
+    tests.push_back(gaspard.obtenirNom() == "Donada--Vidal" &&
+                    gaspard.obtenirPrenom() == "Gaspard" &&
+                    gaspard.obtenirReference() == 1 &&
+                    gaspard.obtenirCodePostal() == "P4R 1I5" &&
+                    gaspard.obtenirCodeClient() == 1997);
+    // TEST 03 : le constructeur par défaut de client premium doit fonctionner
+    tests.push_back(marou.obtenirNom() == "Doe" &&
+                    marou.obtenirPrenom() == "John" &&
+                    marou.obtenirReference() == 3 && //
+                    marou.obtenirCodePostal() == "A1A A1A" &&
+                    marou.obtenirCodeClient() == 0 &&
+                    marou.obtenirJoursRestants() == 0);
+    // TEST 04 : le constructeur par paramètres de client premium doit fonctionner
+    tests.push_back(julie.obtenirNom() == "Cash" &&
+                    julie.obtenirPrenom() == "Julie" &&
+                    julie.obtenirReference() == 4 &&
+                    julie.obtenirCodePostal() == "HZ9 1J4" &&
+                    julie.obtenirCodeClient() == 19141918 &&
+                    julie.obtenirJoursRestants() == 50);
+    // TEST 05 : le constructeur par défaut de fournisseur doit fonctionner
+    tests.push_back(mina.obtenirNom() == "Doe" &&
+                    mina.obtenirPrenom() == "John" &&
+                    mina.obtenirReference() == 5 &&
+                    mina.obtenirCodePostal() == "A1A A1A");
+    // TEST 06 : le constructeur par paramètres de fournisseur doit fonctionner
+    tests.push_back(martine.obtenirNom() == "Bellaiche" &&
+                    martine.obtenirPrenom() == "Martine" &&
+                    martine.obtenirReference() == 6 &&
+                    martine.obtenirCodePostal() == "H4C 8D4");
+    // TEST 07 : le constructeur par défaut de produit doit fonctionner
+    tests.push_back(sel.obtenirNom() == "outil" &&
+                    sel.obtenirReference() == 0 &&
+                    sel.obtenirFournisseur() == nullptr &&
+                    sel.obtenirPrix() == 0.0);
+    // TEST 08 : le constructeur par paramètres de produit doit fonctionner
+    tests.push_back(stylo.obtenirNom() == "stylo" &&
+                    stylo.obtenirReference() == 2 &&
+                    stylo.obtenirFournisseur() == &samuel &&
+                    stylo.obtenirPrix() == 3.0);
+    // TEST 09 : le constructeur par défaut de produit aux enchères doit fonctionner
+    tests.push_back(sculpture.obtenirNom() == "outil" &&
+                    sculpture.obtenirReference() == 3 &&
+                    sculpture.obtenirFournisseur() == nullptr &&
+                    sculpture.obtenirPrix() == 0.0 &&
+                    sculpture.obtenirPrixInitial() == 0.0);
+    // TEST 10 : le constructeur par paramètres de produit aux enchères doit fonctionner
+    tests.push_back(violoncelle.obtenirNom() == "violoncelle" &&
+                    violoncelle.obtenirReference() == 4 &&
+                    violoncelle.obtenirFournisseur() == &martine &&
+                    violoncelle.obtenirPrix() == 5000.0 &&
+                    violoncelle.obtenirPrixInitial() == 5000.0);
+    // TEST 11 : le constructeur par défaut de produit soldé doit fonctionner
+    tests.push_back(saladier.obtenirNom() == "outil" &&
+                    saladier.obtenirReference() == 5 &&
+                    saladier.obtenirFournisseur() == nullptr &&
+                    saladier.obtenirPrix() == 0.0 &&
+                    saladier.obtenirPourcentageRabais() == 0);
+    // TEST 12 : le constructeur par paramètres de produit soldé doit fonctionner
+    tests.push_back(nem.obtenirNom() == "nem crevettes" &&
+                    nem.obtenirReference() == 7 &&
+                    nem.obtenirFournisseur() == &samuel &&
+                    nem.obtenirPrix() == 2 &&
+                    nem.obtenirPourcentageRabais() == 0);
 
- //   // TEST 13 : une surenchère doit être strictement supérieure à l'offre précédente
- //   poly.encherir(&julie, &violoncelle, 5000.0);
- //   tests.push_back(julie.obtenirPanier()->obtenirConteneur().size() == 0);
- //   poly.encherir(&gaspard, &violoncelle, 6000.0);
- //   poly.encherir(&julie, &violoncelle, 6000.0);
-	//// TEST 14
- //   tests.push_back(julie.obtenirPanier()->obtenirConteneur().size() == 0);
- //   poly.encherir(&julie, &violoncelle, 7000.0);
-	//// TEST 15
- //   tests.push_back(julie.obtenirPanier()->obtenirConteneur().size() == 1);
- //   // TEST 16 : on ne peut pas surencherir sur sa propre enchère
- //   poly.encherir(&julie, &violoncelle, 8000.0);
- //   tests.push_back(violoncelle.obtenirPrix() == 7000.0);
- //   // TEST 17 : surenchérir doit enlever le produit du panier de l'ancien encherisseur
- //   poly.encherir(&gaspard, &violoncelle, 8000.0);
- //   tests.push_back(julie.obtenirPanier()->obtenirConteneur().size() == 0);
- //   // TEST 18 : surenchérir doit ajouter le produit au panier du nouvel enchérisseur
- //   poly.encherir(&julie, &violoncelle, 9000.0);
- //   tests.push_back(julie.obtenirPanier()->obtenirConteneur().size() == 1 &&
- //                   julie.obtenirPanier()->obtenirConteneur().find(violoncelle.obtenirReference())->second->obtenirNom() == "violoncelle");
- //   // TEST 19 : surenchérir doit mettre à jour l'attribut encherisseur_
- //   tests.push_back(violoncelle.obtenirEncherisseur() != nullptr &&
- //                   violoncelle.obtenirEncherisseur()->obtenirPrenom() == "Julie");
- //   // TEST 20 : surenchérir doit mettre à jour le prix du produit
- //   tests.push_back(violoncelle.obtenirPrix() == 9000.0);
- //   // TEST 21 : le prix initial ne doit pas varier
- //   tests.push_back(violoncelle.obtenirPrixInitial() == 5000.0);
+    // TEST 13 : une surenchère doit être strictement supérieure à l'offre précédente
+    poly.encherir(&julie, &violoncelle, 5000.0);
+    tests.push_back(julie.obtenirPanier()->obtenirConteneur().size() == 0);
+    poly.encherir(&gaspard, &violoncelle, 6000.0);
+    poly.encherir(&julie, &violoncelle, 6000.0);
+	// TEST 14
+    tests.push_back(julie.obtenirPanier()->obtenirConteneur().size() == 0);
+    poly.encherir(&julie, &violoncelle, 7000.0);
+	// TEST 15
+    tests.push_back(julie.obtenirPanier()->obtenirConteneur().size() == 1);
+    // TEST 16 : on ne peut pas surencherir sur sa propre enchère
+    poly.encherir(&julie, &violoncelle, 8000.0);
+    tests.push_back(violoncelle.obtenirPrix() == 7000.0);
+    // TEST 17 : surenchérir doit enlever le produit du panier de l'ancien encherisseur
+    poly.encherir(&gaspard, &violoncelle, 8000.0);
+    tests.push_back(julie.obtenirPanier()->obtenirConteneur().size() == 0);
+    // TEST 18 : surenchérir doit ajouter le produit au panier du nouvel enchérisseur
+    poly.encherir(&julie, &violoncelle, 9000.0);
+    tests.push_back(julie.obtenirPanier()->obtenirConteneur().size() == 1 &&
+                    julie.obtenirPanier()->obtenirConteneur().find(violoncelle.obtenirReference())->second->obtenirNom() == "violoncelle");
+    // TEST 19 : surenchérir doit mettre à jour l'attribut encherisseur_
+    tests.push_back(violoncelle.obtenirEncherisseur() != nullptr &&
+                    violoncelle.obtenirEncherisseur()->obtenirPrenom() == "Julie");
+    // TEST 20 : surenchérir doit mettre à jour le prix du produit
+    tests.push_back(violoncelle.obtenirPrix() == 9000.0);
+    // TEST 21 : le prix initial ne doit pas varier
+    tests.push_back(violoncelle.obtenirPrixInitial() == 5000.0);
 
- //   // TEST 22 : ajouter le produit au client doit l'ajouter au panier
- //   gaspard.ajouterProduit(&stylo); // produit normal
- //   gaspard.ajouterProduit(&nem);   // produit soldé
- //   tests.push_back(gaspard.obtenirPanier()->obtenirConteneur().size() == 2 &&
- //                   gaspard.obtenirPanier()->obtenirConteneur().find(stylo.obtenirReference())->second->obtenirNom() == "stylo" &&
- //                   gaspard.obtenirPanier()->obtenirConteneur().find(nem.obtenirReference())->second->obtenirNom() == "nem crevettes");
- //   // TEST 23 : idem pour client premium
- //   julie.ajouterProduit(&stylo); // produit normal
- //   julie.ajouterProduit(&nem);   // produit soldé
- //   tests.push_back(julie.obtenirPanier()->obtenirConteneur().size() == 3 &&
- //                   julie.obtenirPanier()->obtenirConteneur().find(stylo.obtenirReference())->second->obtenirNom() == "stylo" &&
- //                   julie.obtenirPanier()->obtenirConteneur().find(nem.obtenirReference())->second->obtenirNom() == "nem crevettes");
- //   // TEST 24 : il est possible d'ajouter le même produit deux fois dans le panier
- //   gaspard.ajouterProduit(&stylo); // produit normal
- //   gaspard.ajouterProduit(&nem);   // produit soldé
- //   tests.push_back(gaspard.obtenirPanier()->obtenirConteneur().size() == 4);
+    // TEST 22 : ajouter le produit au client doit l'ajouter au panier
+    gaspard.ajouterProduit(&stylo); // produit normal
+    gaspard.ajouterProduit(&nem);   // produit soldé
+    tests.push_back(gaspard.obtenirPanier()->obtenirConteneur().size() == 2 &&
+                    gaspard.obtenirPanier()->obtenirConteneur().find(stylo.obtenirReference())->second->obtenirNom() == "stylo" &&
+                    gaspard.obtenirPanier()->obtenirConteneur().find(nem.obtenirReference())->second->obtenirNom() == "nem crevettes");
+    // TEST 23 : idem pour client premium
+    julie.ajouterProduit(&stylo); // produit normal
+    julie.ajouterProduit(&nem);   // produit soldé
+    tests.push_back(julie.obtenirPanier()->obtenirConteneur().size() == 3 &&
+                    julie.obtenirPanier()->obtenirConteneur().find(stylo.obtenirReference())->second->obtenirNom() == "stylo" &&
+                    julie.obtenirPanier()->obtenirConteneur().find(nem.obtenirReference())->second->obtenirNom() == "nem crevettes");
+    // TEST 24 : il est possible d'ajouter le même produit deux fois dans le panier
+    gaspard.ajouterProduit(&stylo); // produit normal
+    gaspard.ajouterProduit(&nem);   // produit soldé
+    tests.push_back(gaspard.obtenirPanier()->obtenirConteneur().size() == 4);
 
-	//// TEST 25 : enlever un produit doit mettre à jour l'attribut du client
-	//gaspard.enleverProduit(&stylo);
-	//tests.push_back(gaspard.obtenirPanier()->obtenirConteneur().size() == 3);
+	// TEST 25 : enlever un produit doit mettre à jour l'attribut du client
+	gaspard.enleverProduit(&stylo);
+	tests.push_back(gaspard.obtenirPanier()->obtenirConteneur().size() == 3);
 
-	//// TEST 26 : enlever un produit un deuxième fois doit aussi mettre à jour l'attribu du client
-	//gaspard.enleverProduit(&stylo);
-	//tests.push_back(gaspard.obtenirPanier()->obtenirConteneur().size() == 2);
+	// TEST 26 : enlever un produit un deuxième fois doit aussi mettre à jour l'attribu du client
+	gaspard.enleverProduit(&stylo);
+	tests.push_back(gaspard.obtenirPanier()->obtenirConteneur().size() == 2);
 
- //   // TEST 27 : idem pour client premium
- //   julie.ajouterProduit(&stylo); // produit normal
- //   julie.ajouterProduit(&nem);   // produit soldé
- //   tests.push_back(julie.obtenirPanier()->obtenirConteneur().size() == 5);
+    // TEST 27 : idem pour client premium
+    julie.ajouterProduit(&stylo); // produit normal
+    julie.ajouterProduit(&nem);   // produit soldé
+    tests.push_back(julie.obtenirPanier()->obtenirConteneur().size() == 5);
 
- //   // TEST 28 : ajouter le produit au fournisseur doit l'ajouter au catalogue
- //   tests.push_back(martine.obtenirCatalogue()->obtenirConteneur().size() == 2 &&
- //                   martine.obtenirCatalogue()->obtenirConteneur().find(chaussures.obtenirReference())->second->obtenirNom() == "chaussures" && // normal
- //                   martine.obtenirCatalogue()->obtenirConteneur().find(violoncelle.obtenirReference())->second->obtenirNom() == "violoncelle"); // enchères
-	//// TEST 29
+//    // TEST 28 : ajouter le produit au fournisseur doit l'ajouter au catalogue
+//    tests.push_back(martine.obtenirCatalogue()->obtenirConteneur().size() == 2 &&
+//                    martine.obtenirCatalogue()->obtenirConteneur().find(chaussures.obtenirReference())->second->obtenirNom() == "chaussures" && // normal
+//                    martine.obtenirCatalogue()->obtenirConteneur().find(violoncelle.obtenirReference())->second->obtenirNom() == "violoncelle"); // enchères
+//	// TEST 29
  //   tests.push_back(mina.obtenirCatalogue()->obtenirConteneur().size() == 1 &&
  //                   mina.obtenirCatalogue()->obtenirConteneur().find(montre.obtenirReference())->second->obtenirNom() == "montre"); // soldé
  //   // TEST 30 : modifier le fournisseur d'un produit doit ajouter le produit au nouveau fournisseur
@@ -294,15 +294,15 @@ int main()
  //   mina.afficherCatalogue();
  //   poly.afficherProfils();
 
- //   cout << "TESTS" << endl;
- //   for (unsigned int i = 0; i < tests.size(); i++)
- //   {
- //       cout << "\tTest " << setfill('0') << setw(2) << i + 1 << "... ";
- //       if (tests[i])
- //           cout << "OK!" << endl;
- //       else
- //           cout << "ECHEC" << endl;
- //   }
+    cout << "TESTS" << endl;
+    for (unsigned int i = 0; i < tests.size(); i++)
+    {
+        cout << "\tTest " << setfill('0') << setw(2) << i + 1 << "... ";
+        if (tests[i])
+            cout << "OK!" << endl;
+        else
+            cout << "ECHEC" << endl;
+    }
 	int maman;
     return 0;
 }

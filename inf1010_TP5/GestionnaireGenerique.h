@@ -10,12 +10,27 @@ template<typename T, typename C, typename S, typename A>
 class GestionnaireGenerique
 {
 public:
-	GestionnaireGenerique(){};
+	GestionnaireGenerique()
+	{
+	};
+
 	void ajouter(T* donnee)
 	{
 		A ajouterFoncteur(conteneur_);
 		ajouterFoncteur(donnee);
 	};
+
+	void supprimer(T* donnee)
+	{
+		S supprimerFoncteur(conteneur_);
+		supprimerFoncteur(donnee);
+	}
+
+	C& obtenirConteneur()
+	{
+		return conteneur_;
+	}
+
 protected:
 	C conteneur_;
 };

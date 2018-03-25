@@ -10,7 +10,7 @@ class Usager
 {
   public:
     Usager(const string &nom = "Doe", const string &prenom = "John",
-           int identifiant = 0, const string &codePostal = "A1A A1A");
+           int reference = 0, const string &codePostal = "A1A A1A");
 
     string obtenirNom() const;
     string obtenirPrenom() const;
@@ -33,7 +33,6 @@ class Usager
     string prenom_;
     int reference_;
     string codePostal_;
-	int identifiant_;
 };
 
 #endif

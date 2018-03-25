@@ -6,3 +6,6 @@
 
 #include "GestionnaireProduits.h"
 
+GestionnaireProduits::GestionnaireProduits():GestionnaireGenerique()
+{
+}

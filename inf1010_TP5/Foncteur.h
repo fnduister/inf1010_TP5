@@ -34,8 +34,10 @@ private:
 class FoncteurGenerateurId
 {
 public:
-	FoncteurGenerateurId();
-	int operator () ();
+	FoncteurGenerateurId(){};
+	int operator () (){
+		return id_++;
+	};
 private:
 	int id_ = 0;
 };
@@ -74,14 +76,32 @@ Méthodes :
 */
 class AjouterProduit
 {
-	AjouterProduit();
 public:
-	auto& operator()(pair<int,Produit*> produit){
-		multimap_.insert(produit);
+	AjouterProduit(std::multimap<int, Produit*>& monMultimap) :multimap_(monMultimap) {};
+	auto& operator()(Produit* produit){
+		multimap_.insert(make_pair(produit->obtenirReference(),produit));
 		return multimap_;
 	};
 private:
 	std::multimap<int, Produit*> &multimap_;
+};
+
+//TODO : Créer le Foncteur AjouterUsager
+/*
+Attributs :
+- &set;
+Méthodes :
+- operateur(); Trouve l'Usager dans le set_, s'il existe on le supprime et on retourne le set_, sinon on retourne juste directement le set_.
+*/
+class AjouterUsager
+{
+public:
+	AjouterUsager(set<Usager*>& setIn) :set_(setIn) {};
+	void operator()(Usager* usager) const {
+		const auto itrInsert = set_.insert(usager);
+	};
+private:
+	set<Usager*> &set_;
 };
 
 // TODO : Créer le Foncteur SupprimerProduit
@@ -95,8 +115,9 @@ Méthodes :
 */
 class SupprimerProduit
 {
-	SupprimerProduit();
 public:
+	SupprimerProduit(std::multimap<int, Produit*> &myMultimap) :multimap_(myMultimap) {};
+
 	auto& operator()(Produit* produit) {
 		const auto itrTrouver = find_if(multimap_.begin(), multimap_.end(), FoncteurEgal<Produit>(produit));
 		if (itrTrouver != multimap_.end())
@@ -126,20 +147,3 @@ private:
 	std::set<Usager*> &set_;
 };
 
-//TODO : Créer le Foncteur AjouterUsager
-/*
-Attributs :
-- &set;
-Méthodes :
-- operateur(); Trouve l'Usager dans le set_, s'il existe on le supprime et on retourne le set_, sinon on retourne juste directement le set_.
-*/
-class AjouterUsager
-{
-public:
-	AjouterUsager(set<Usager*>& setIn):set_(setIn){};
-	void operator()(Usager* usager){
-		auto itrInsert = set_.insert(usager);
-	};
-private:
-	set<Usager*> &set_;
-};

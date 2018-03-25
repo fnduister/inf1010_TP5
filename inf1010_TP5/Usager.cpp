@@ -1,11 +1,11 @@
 #include "Usager.h"
 #include <iostream>
 
-Usager::Usager(const string &nom, const string &prenom, int identifiant,
+Usager::Usager(const string &nom, const string &prenom, int reference,
                const string &codePostal)
     : nom_(nom),
       prenom_(prenom),
-      identifiant_(identifiant),
+      reference_(reference),
       codePostal_(codePostal)
 {
 }
@@ -37,7 +37,7 @@ double Usager::obtenirTotalAPayer() const
 
 void Usager::afficher() const
 {
-    cout << "\t" << nom_ << ", " << prenom_ << " (" << identifiant_ << ")" << endl
+    cout << "\t" << nom_ << ", " << prenom_ << " (" << reference_ << ")" << endl
         << "\t\tcode postal:\t" << codePostal_ << endl;
 }
 

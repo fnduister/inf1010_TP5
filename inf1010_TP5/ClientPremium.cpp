@@ -23,9 +23,8 @@ unsigned int ClientPremium::obtenirJoursRestants() const
 double ClientPremium::obtenirTotalAPayer() const
 {
     double montant = 0;
-    for (unsigned int i = 0; i < panier_.size(); i++) {
-        double prix = panier_[i]->obtenirPrix();
-        montant += prix < 5 ? 0 : prix - 5;
+    for (const pair<int,Produit*> produitPair : panier_->obtenirConteneur()) {
+        montant += produitPair.second->obtenirPrix() < 5 ? 0 : produitPair.second->obtenirPrix() - 5;
     }
     return montant;
 }

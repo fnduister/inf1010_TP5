@@ -11,9 +11,10 @@
 #include "Foncteur.h"
 #include <set>
 
-class GestionnaireProduits: GestionnaireGenerique<Produit, multimap<int,Produit*>, SupprimerProduit, AjouterProduit>
+class GestionnaireProduits:public GestionnaireGenerique<Produit, multimap<int,Produit*>, SupprimerProduit, AjouterProduit>
 {
 public:
+	GestionnaireProduits();
 private:	
 };
 // TODO : Créer la classe GestionnaireProduits

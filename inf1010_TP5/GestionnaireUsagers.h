@@ -11,10 +11,15 @@
 #include <set>
 #include "Foncteur.h"
 
+class ProduitAuxEncheres;
+class Client;
+
 class GestionnaireUsagers:public GestionnaireGenerique<Usager, set<Usager*>, SupprimerUsager, AjouterUsager>
 {
 public:
-	GestionnaireUsagers();;
+	GestionnaireUsagers();
+	void encherir(Client *client, ProduitAuxEncheres *produit, double montant) const;
+
 private:
 };
 
