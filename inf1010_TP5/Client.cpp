@@ -85,3 +85,8 @@ void Client::reinitialiser()
     }
     panier_->obtenirConteneur().clear();
 }
+
+Produit* Client::trouverProduitPlusCher() const
+{
+	return panier_->trouverProduitPlusCher();
+}

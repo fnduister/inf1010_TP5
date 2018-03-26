@@ -11,6 +11,7 @@ class Usager
   public:
     Usager(const string &nom = "Doe", const string &prenom = "John",
            int reference = 0, const string &codePostal = "A1A A1A");
+//	virtual ~Usager() = 0;
 
     string obtenirNom() const;
     string obtenirPrenom() const;

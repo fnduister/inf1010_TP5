@@ -5,6 +5,7 @@
 *******************************************/
 
 #pragma once
+#include <algorithm>
 
 template<typename T, typename C, typename S, typename A>
 class GestionnaireGenerique
@@ -29,6 +30,12 @@ public:
 	C& obtenirConteneur()
 	{
 		return conteneur_;
+	}
+
+	template<typename Predicat>
+	void pourChaqueElement(Predicat predicat)
+	{
+		for_each(conteneur_.begin(), conteneur_.end(), predicat);
 	}
 
 protected:

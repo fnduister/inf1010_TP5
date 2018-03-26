@@ -42,7 +42,6 @@ private:
 	int id_ = 0;
 };
 
-
 /*
 Attributs :
 - id_;

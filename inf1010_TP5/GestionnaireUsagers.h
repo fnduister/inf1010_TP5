@@ -19,7 +19,9 @@ class GestionnaireUsagers:public GestionnaireGenerique<Usager, set<Usager*>, Sup
 public:
 	GestionnaireUsagers();
 	void encherir(Client *client, ProduitAuxEncheres *produit, double montant) const;
-
+	void reinitialiser();
+	double obtenirChiffreAffaires() const;
+	void afficherProfils() const;
 private:
 };
 

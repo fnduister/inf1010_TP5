@@ -9,24 +9,18 @@
 #include "GestionnaireGenerique.h"
 #include "Produit.h"
 #include "Foncteur.h"
-#include <set>
 
 class GestionnaireProduits:public GestionnaireGenerique<Produit, multimap<int,Produit*>, SupprimerProduit, AjouterProduit>
 {
 public:
 	GestionnaireProduits();
+//	void reinitialiserClient();
+//	void reinitialiserFournisseur();
+//	void afficher();
+	int obtenirTotalAPayer();
+//	int obtenirTotalApayerPremium();
+	Produit* trouverProduitPlusCher() const;
+//	multimap<int,Produit*> obtenirProduitsEntre();
+//	multimap<int, Produit*> obtenirProduitSuivant();
 private:	
 };
-// TODO : Créer la classe GestionnaireProduits
-
-// TODO : Méthodes :
-/*
-- reinitialiserClient();
-- reinitialiserFournisseur();
-- afficher();
-- obtenirTotalAPayer();
-- obtenirTotalApayerPremium();
-- trouverProduitPlusCher();
-- obtenirProduitsEntre();
-- obtenirProduitSuivant();
-*/
