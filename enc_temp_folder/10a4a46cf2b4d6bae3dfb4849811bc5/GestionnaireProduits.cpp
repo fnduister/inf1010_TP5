@@ -26,14 +26,13 @@ int GestionnaireProduits::obtenirTotalAPayer()
 Produit* GestionnaireProduits::trouverProduitPlusCher() const
 {
 	if (conteneur_.size() != 0) {
-		return 
-		std::max_element(
+		return std::max_element(
 			conteneur_.begin(),
 			conteneur_.end(),
 			[](pair<int, Produit*> a, pair<int, Produit*> b)
-			{
-				return a.second->obtenirPrix() < b.second->obtenirPrix();
-			}
+		{
+			return a.second->obtenirPrix() < b.second->obtenirPrix();
+		}
 		)->second;
 	}
 	return nullptr;

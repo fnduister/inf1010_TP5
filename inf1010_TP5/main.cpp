@@ -265,7 +265,7 @@ int main()
 
 	// TEST 50 : diminuer le prix des produits doit mettre a jour tous les produits du fournisseur
 	samuel.DiminuerPrix(10);
-	//cout << samuel.obtenirCatalogue()->obtenirConteneur().find(6)->second->obtenirPrix() << endl;
+	cout << samuel.obtenirCatalogue()->obtenirConteneur().find(6)->second->obtenirPrix() << endl;
 	tests.push_back(samuel.obtenirCatalogue()->obtenirConteneur().find(6)->second->obtenirPrix() == 63.0 &&
 					samuel.obtenirCatalogue()->obtenirConteneur().find(6)->second->Produit::obtenirPrix() == 90.0 &&
 					samuel.obtenirCatalogue()->obtenirConteneur().find(1)->second->obtenirPrix() == 36);

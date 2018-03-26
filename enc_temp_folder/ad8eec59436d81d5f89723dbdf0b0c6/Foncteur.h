@@ -50,19 +50,6 @@ Méthodes :
 */
 
 // TODO : Créer le FoncteurDiminuerPourcent
-class FoncteurDiminierPourcent
-{
-public:
-	FoncteurDiminierPourcent(int pourcentage):pourcentage_(pourcentage){};
-	void operator () (pair<int,Produit*> pairProduit)
-	{
-		pairProduit.second->modifierPrix(pairProduit.second->obtenirPrix() - pourcentage_ / 100);
-	}
-private:
-	int pourcentage_;
-};
-
-
 /*
 Attributs :
 - pourcentage_;
