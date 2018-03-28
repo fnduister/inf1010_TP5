@@ -65,3 +65,7 @@ Produit* Fournisseur::trouverProduitPlusCher() const
 {
 	return catalogue_->trouverProduitPlusCher();
 }
+
+void Fournisseur::DiminuerPrix(int pourcent) const
+{
+}
