@@ -251,7 +251,6 @@ int main()
     tests.push_back(samuel.obtenirTotalAPayer() == 0.0);
     // TEST 46 : le chiffre d'affaires doit additionner les totaux à payer
     tests.push_back(poly.obtenirChiffreAffaires() == 110.0 + 21095.0);
- //   
     // TEST 47 : un usager ne peut pas être ajouté deux fois au gestionnaire
     tests.push_back(poly.obtenirConteneur().size() == 8);
     poly.ajouter(&martine);

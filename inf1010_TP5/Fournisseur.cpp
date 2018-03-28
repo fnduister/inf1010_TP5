@@ -1,5 +1,6 @@
 #include "Fournisseur.h"
 #include <iostream>
+#include "foncteur.h"
 
 Fournisseur::Fournisseur()
     : Usager()
@@ -68,4 +69,6 @@ Produit* Fournisseur::trouverProduitPlusCher() const
 
 void Fournisseur::DiminuerPrix(int pourcent) const
 {
+	const FoncteurDiminierPourcent diminueMoi(pourcent);
+	for_each(catalogue_->obtenirConteneur().begin(), catalogue_->obtenirConteneur().end(), diminueMoi);
 }

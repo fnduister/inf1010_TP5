@@ -132,7 +132,7 @@
   <ItemGroup>
     <ClInclude Include="Client.h" />
     <ClInclude Include="ClientPremium.h" />
-    <ClInclude Include="Foncteur.h" />
+    <ClInclude Include="foncteur.h" />
     <ClInclude Include="Fournisseur.h" />
     <ClInclude Include="Gestionnaire.h" />
     <ClInclude Include="GestionnaireGenerique.h" />

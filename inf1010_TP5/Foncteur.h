@@ -1,4 +1,4 @@
-/********************************************
+ï»¿/********************************************
 * Titre: Travail pratique #5 - Foncteur.h
 * Date: 9 mars 2018
 * Auteur: Ryan Hardie
@@ -11,31 +11,31 @@
 #include "Usager.h"
 #include <algorithm>
 
-// TODO : Créer le FoncteurEgal
+// TODO : Crï¿½er le FoncteurEgal
 template<typename T>
 class FoncteurEgal
 {
 public:
-	FoncteurEgal(T* objet):t_(objet){};
+	FoncteurEgal(T* objet) :t_(objet) {};
 
 	int operator () (const std::pair<int, Produit*> pairAcomparer) {
 		return pairAcomparer.second == t_;
 	};
 
-	int operator () (Usager* usager){
+	int operator () (Usager* usager) {
 		return usager == t_;
 	};
 private:
-	T* t_;
+	T * t_;
 };
 
 
-// TODO : Créer le FoncteurGenerateurId
+// TODO : Crï¿½er le FoncteurGenerateurId
 class FoncteurGenerateurId
 {
 public:
-	FoncteurGenerateurId(){};
-	int operator () (){
+	FoncteurGenerateurId() {};
+	int operator () () {
 		return id_++;
 	};
 private:
@@ -45,16 +45,16 @@ private:
 /*
 Attributs :
 - id_;
-Méthodes :
-- operator(); Incrémenter id_ à chaque appel
+Mï¿½thodes :
+- operator(); Incrï¿½menter id_ ï¿½ chaque appel
 */
 
-// TODO : Créer le FoncteurDiminuerPourcent
+// TODO : Crï¿½er le FoncteurDiminuerPourcent
 class FoncteurDiminierPourcent
 {
 public:
-	FoncteurDiminierPourcent(int pourcentage):pourcentage_(pourcentage){};
-	void operator () (pair<int,Produit*> pairProduit)
+	FoncteurDiminierPourcent(int pourcentage) :pourcentage_(pourcentage) {};
+	void operator () (pair<int, Produit*> pairProduit)
 	{
 		pairProduit.second->modifierPrix(pairProduit.second->obtenirPrix() - pourcentage_ / 100);
 	}
@@ -66,43 +66,43 @@ private:
 /*
 Attributs :
 - pourcentage_;
-Méthodes :
-- operator(); Calule le nouveau prix du Produit de la pair passé en paramètre et le modifie
+Mï¿½thodes :
+- operator(); Calule le nouveau prix du Produit de la pair passï¿½ en paramï¿½tre et le modifie
 */
 
-// TODO : Créer le FoncteurIntervalle
+// TODO : Crï¿½er le FoncteurIntervalle
 /*
 Attributs :
 - borneInf_;
 - borneSup_;
-Méthodes :
-- operator(); Vérifie que le Produit associé à la pair passé en paramètre est compris entre les bornes borneInf_ et borneSup_ (retourne un booléen)
+Mï¿½thodes :
+- operator(); Vï¿½rifie que le Produit associï¿½ ï¿½ la pair passï¿½ en paramï¿½tre est compris entre les bornes borneInf_ et borneSup_ (retourne un boolï¿½en)
 */
 
-// TODO : Créer le Foncteur AjouterProduit
+// TODO : Crï¿½er le Foncteur AjouterProduit
 /*
 Attributs :
 - &multimap_;
-Méthodes :
-- operator(); Ajoute dans la multimap la pair passé par paramètre et retourne la multimap_;
+Mï¿½thodes :
+- operator(); Ajoute dans la multimap la pair passï¿½ par paramï¿½tre et retourne la multimap_;
 */
 class AjouterProduit
 {
 public:
 	AjouterProduit(std::multimap<int, Produit*>& monMultimap) :multimap_(monMultimap) {};
-	auto& operator()(Produit* produit){
-		multimap_.insert(make_pair(produit->obtenirReference(),produit));
+	auto& operator()(Produit* produit) {
+		multimap_.insert(make_pair(produit->obtenirReference(), produit));
 		return multimap_;
 	};
 private:
 	std::multimap<int, Produit*> &multimap_;
 };
 
-//TODO : Créer le Foncteur AjouterUsager
+//TODO : Crï¿½er le Foncteur AjouterUsager
 /*
 Attributs :
 - &set;
-Méthodes :
+Mï¿½thodes :
 - operateur(); Trouve l'Usager dans le set_, s'il existe on le supprime et on retourne le set_, sinon on retourne juste directement le set_.
 */
 class AjouterUsager
@@ -116,14 +116,14 @@ private:
 	set<Usager*> &set_;
 };
 
-// TODO : Créer le Foncteur SupprimerProduit
+// TODO : Crï¿½er le Foncteur SupprimerProduit
 /*
 Attributs :
 - &multimap_;
-Méthodes :
+Mï¿½thodes :
 - operator(); Utilise la fonction find_if avec le FoncteurEgal. Si le Produit existe,
-				on supprime le Produit et on retourne la multimap_,
-				sinon on retourne juste la multimap_ sans supprimer l'élément.
+on supprime le Produit et on retourne la multimap_,
+sinon on retourne juste la multimap_ sans supprimer l'ï¿½lï¿½ment.
 */
 class SupprimerProduit
 {
@@ -145,7 +145,7 @@ private:
 class SupprimerUsager
 {
 public:
-	SupprimerUsager(set<Usager*>& objet):set_(objet){};
+	SupprimerUsager(set<Usager*>& objet) :set_(objet) {};
 
 	auto& operator()(Usager* usager) {
 		const auto itrTrouver = find_if(set_.begin(), set_.end(), FoncteurEgal<Usager>(usager));
@@ -158,4 +158,3 @@ public:
 private:
 	std::set<Usager*> &set_;
 };
-
