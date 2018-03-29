@@ -46,8 +46,3 @@ vector<pair<int, Produit*>> GestionnaireProduits::obtenirProduitsEntre(double bo
 	copy_if(conteneur_.begin(), conteneur_.end(), back_inserter(temp), FoncteurIntervalle(borneInf,borneSup));
 	return temp;
 }
-
-multimap<int, Produit*>::iterator GestionnaireProduits::obtenirProduitSuivant(Produit* prod)
-{
-	return find_if(conteneur_.begin(),conteneur_.end(),)
-}

@@ -22,5 +22,6 @@ public:
 //	int obtenirTotalApayerPremium();
 	Produit* trouverProduitPlusCher() const;
 	vector<pair<int, Produit*>> obtenirProduitsEntre(double begin,double end);
-	multimap<int, Produit*>::iterator obtenirProduitSuivant(Produit* prod);
+//	multimap<int, Produit*> obtenirProduitSuivant();
+private:	
 };

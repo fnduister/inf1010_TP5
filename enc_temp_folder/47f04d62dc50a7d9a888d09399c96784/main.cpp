@@ -283,10 +283,10 @@ int main()
 		intervalleProduit[0].second->obtenirPrix() >= 20.0 &&
 		intervalleProduit[intervalleProduit.size() - 1].second->obtenirPrix() <= 2000.0);
 
-	// TEST 52 : obtenir un produit avec un prix inférieur ou égal à 200
-	tests.push_back(julie.obtenirPanier()->obtenirProduitSuivant(&montre)->obtenirNom() == "nem crevettes" &&
-					julie.obtenirPanier()->obtenirProduitSuivant(&montre)->obtenirReference() > 6 &&
-					julie.obtenirPanier()->obtenirProduitSuivant(&montre) == &nem);
+	//// TEST 52 : obtenir un produit avec un prix inférieur ou égal à 200
+	//tests.push_back(julie.obtenirPanier()->obtenirProduitSuivant(&montre)->obtenirNom() == "nem crevettes" &&
+	//				julie.obtenirPanier()->obtenirProduitSuivant(&montre)->obtenirReference() > 6 &&
+	//				julie.obtenirPanier()->obtenirProduitSuivant(&montre) == &nem);
 
  //   // fonctions d'affichage
  //   gaspard.afficherPanier();

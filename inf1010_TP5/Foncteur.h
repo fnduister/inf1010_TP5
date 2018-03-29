@@ -53,13 +53,15 @@ M�thodes :
 class FoncteurDiminierPourcent
 {
 public:
-	FoncteurDiminierPourcent(int pourcentage) :pourcentage_(pourcentage) {};
-	void operator () (pair<int, Produit*> pairProduit)
+	FoncteurDiminierPourcent(double pourcentage) :pourcentage_(pourcentage) {};
+	void operator () (pair<int, Produit*> pairProduit) const
 	{
-		pairProduit.second->modifierPrix(pairProduit.second->obtenirPrix() - pourcentage_ / 100);
+		pairProduit.second->modifierPrix(
+			pairProduit.second->Produit::obtenirPrix() - pairProduit.second->Produit::obtenirPrix() * pourcentage_ / 100
+		);
 	}
 private:
-	int pourcentage_;
+	double pourcentage_;
 };
 
 
@@ -78,6 +80,18 @@ Attributs :
 M�thodes :
 - operator(); V�rifie que le Produit associ� � la pair pass� en param�tre est compris entre les bornes borneInf_ et borneSup_ (retourne un bool�en)
 */
+class FoncteurIntervalle
+{
+public:
+	FoncteurIntervalle(double inf,double sup):borneInf_(inf),borneSup_(sup){};
+	bool operator()(const pair<int,Produit*> pairProduit) const
+	{
+		return pairProduit.second->obtenirPrix() > borneInf_ && pairProduit.second->obtenirPrix() < borneSup_;
+	}
+private:
+	double borneInf_;
+	double borneSup_;
+};
 
 // TODO : Cr�er le Foncteur AjouterProduit
 /*
