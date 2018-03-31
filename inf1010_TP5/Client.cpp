@@ -1,6 +1,7 @@
 #include "Client.h"
 #include "ProduitAuxEncheres.h"
 #include <iostream>
+#include <numeric>
 
 Client::Client(unsigned int codeClient)
     : Usager(),
@@ -17,6 +18,11 @@ Client::Client(const string &nom, const string &prenom, int reference,
 	 panier_ = new GestionnaireProduits();
 }
 
+Client::~Client()
+{
+	delete panier_;
+}
+
 unsigned int Client::obtenirCodeClient() const
 {
     return codeClient_;
@@ -31,10 +37,12 @@ GestionnaireProduits* Client::obtenirPanier() const
 double Client::obtenirTotalAPayer() const
 {
 	// TODO : À modifier
-    double montant = 0;
-    for (const auto pairProduit: panier_->obtenirConteneur())
-        montant += pairProduit.second->obtenirPrix();
-    return montant;
+	return accumulate(panier_->obtenirConteneur().begin(), panier_->obtenirConteneur().end(),0.0,
+		[](double total,pair<int,Produit*> b)
+			{
+				return total + b.second->obtenirPrix();
+			}
+	);
 }
 
 void Client::afficherPanier() const
@@ -57,7 +65,7 @@ void Client::afficher() const
 
 void Client::modifierCodeClient(unsigned int codeClient)
 {
-    codeClient_ = codeClient_;
+    codeClient_ = codeClient;
 }
 
 void Client::enleverProduit(Produit *produit)

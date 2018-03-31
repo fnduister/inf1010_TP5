@@ -266,10 +266,14 @@ int main()
 	cout << "prix avant diminution: "<< samuel.obtenirCatalogue()->obtenirConteneur().find(6)->second->Produit::obtenirPrix() << endl;
 
 	samuel.DiminuerPrix(10);
-	cout << samuel.obtenirCatalogue()->obtenirConteneur().find(6)->second->obtenirPrix() << endl;
+	cout << double(samuel.obtenirCatalogue()->obtenirConteneur().find(6)->second->obtenirPrix()) << endl;
 	cout << samuel.obtenirCatalogue()->obtenirConteneur().find(6)->second->Produit::obtenirPrix() << endl;
 	cout << samuel.obtenirCatalogue()->obtenirConteneur().find(1)->second->obtenirPrix() << endl;
-	tests.push_back(samuel.obtenirCatalogue()->obtenirConteneur().find(6)->second->obtenirPrix() == 63.0 &&
+	double s = samuel.obtenirCatalogue()->obtenirConteneur().find(6)->second->obtenirPrix();
+	double d = samuel.obtenirCatalogue()->obtenirConteneur().find(6)->second->Produit::obtenirPrix();
+	double x = samuel.obtenirCatalogue()->obtenirConteneur().find(1)->second->obtenirPrix();
+
+	tests.push_back(samuel.obtenirCatalogue()->obtenirConteneur().find(6)->second->obtenirPrix() == 63 &&
 					samuel.obtenirCatalogue()->obtenirConteneur().find(6)->second->Produit::obtenirPrix() == 90.0 &&
 					samuel.obtenirCatalogue()->obtenirConteneur().find(1)->second->obtenirPrix() == 36);
 
@@ -277,25 +281,25 @@ int main()
 	vector<pair<int, Produit*>> intervalleProduit = julie.obtenirPanier()->obtenirProduitsEntre(20, 2000);
 	for (int i = 0; i < intervalleProduit.size(); i++) {
 		cout << "asdfljshfgkjsh" << endl;
-		intervalleProduit[i].second->afficher();
+		intervalleProduit[i].second->afficher(); 
 	}
 	tests.push_back(intervalleProduit.size() == 2 &&
 		intervalleProduit[0].second->obtenirPrix() >= 20.0 &&
 		intervalleProduit[intervalleProduit.size() - 1].second->obtenirPrix() <= 2000.0);
 
-	// TEST 52 : obtenir un produit avec un prix inférieur ou égal à 200
+//	 TEST 52 : obtenir un produit avec un prix inférieur ou égal à 200
 	tests.push_back(julie.obtenirPanier()->obtenirProduitSuivant(&montre)->obtenirNom() == "nem crevettes" &&
 					julie.obtenirPanier()->obtenirProduitSuivant(&montre)->obtenirReference() > 6 &&
 					julie.obtenirPanier()->obtenirProduitSuivant(&montre) == &nem);
 
  //   // fonctions d'affichage
- //   gaspard.afficherPanier();
- //   julie.afficherPanier();
- //   ratus.afficherPanier();
- //   martine.afficherCatalogue();
- //   samuel.afficherCatalogue();
- //   mina.afficherCatalogue();
- //   poly.afficherProfils();
+    gaspard.afficherPanier();
+    julie.afficherPanier(); 
+    ratus.afficherPanier();
+    martine.afficherCatalogue();
+    samuel.afficherCatalogue();
+    mina.afficherCatalogue();
+    poly.afficherProfils();
 
     cout << "TESTS" << endl;
     for (unsigned int i = 0; i < tests.size(); i++)

@@ -18,9 +18,9 @@ public:
 //	void reinitialiserClient();
 //	void reinitialiserFournisseur();
 //	void afficher();
-	int obtenirTotalAPayer();
+	double obtenirTotalAPayer();
 //	int obtenirTotalApayerPremium();
 	Produit* trouverProduitPlusCher() const;
 	vector<pair<int, Produit*>> obtenirProduitsEntre(double begin,double end);
-	multimap<int, Produit*>::iterator obtenirProduitSuivant(Produit* prod);
+	Produit* obtenirProduitSuivant(Produit* prod);
 };

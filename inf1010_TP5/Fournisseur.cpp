@@ -15,6 +15,11 @@ Fournisseur::Fournisseur(const string &nom, const string &prenom, int identifian
 	catalogue_ = new GestionnaireProduits();
 }
 
+Fournisseur::~Fournisseur()
+{
+	delete catalogue_;
+}
+
 GestionnaireProduits* Fournisseur::obtenirCatalogue() const
 {
     return catalogue_;
@@ -69,6 +74,5 @@ Produit* Fournisseur::trouverProduitPlusCher() const
 
 void Fournisseur::DiminuerPrix(int pourcent) const
 {
-	const FoncteurDiminierPourcent diminueMoi(pourcent);
-	for_each(catalogue_->obtenirConteneur().begin(), catalogue_->obtenirConteneur().end(), diminueMoi);
+	for_each(catalogue_->obtenirConteneur().begin(), catalogue_->obtenirConteneur().end(), FoncteurDiminierPourcent(pourcent));
 }

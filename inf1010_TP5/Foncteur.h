@@ -53,15 +53,15 @@ M�thodes :
 class FoncteurDiminierPourcent
 {
 public:
-	FoncteurDiminierPourcent(double pourcentage) :pourcentage_(pourcentage) {};
+	FoncteurDiminierPourcent(int pourcentage) :pourcentage_(pourcentage) {};
 	void operator () (pair<int, Produit*> pairProduit) const
 	{
 		pairProduit.second->modifierPrix(
-			pairProduit.second->Produit::obtenirPrix() - pairProduit.second->Produit::obtenirPrix() * pourcentage_ / 100
+			pairProduit.second->Produit::obtenirPrix() - pairProduit.second->Produit::obtenirPrix() * pourcentage_ / 100.0
 		);
 	}
 private:
-	double pourcentage_;
+	int pourcentage_;
 };
 
 

@@ -6,17 +6,18 @@
 
 #include "GestionnaireProduits.h"
 #include <numeric>
+#include <functional>
 
 GestionnaireProduits::GestionnaireProduits():GestionnaireGenerique()
 {
 }
 
-int GestionnaireProduits::obtenirTotalAPayer()
+double GestionnaireProduits::obtenirTotalAPayer()
 {
 	return std::accumulate(
 		conteneur_.begin(),
-		conteneur_.end(),0,
-		[](int total, auto produitpair)
+		conteneur_.end(),0.0,
+		[](double total, auto produitpair)
 		{
 			return total + produitpair.second->obtenirPrix();
 		}
@@ -47,7 +48,8 @@ vector<pair<int, Produit*>> GestionnaireProduits::obtenirProduitsEntre(double bo
 	return temp;
 }
 
-multimap<int, Produit*>::iterator GestionnaireProduits::obtenirProduitSuivant(Produit* prod)
+Produit* GestionnaireProduits::obtenirProduitSuivant(Produit* prod)
 {
-	return find_if(conteneur_.begin(),conteneur_.end(),)
+	return find_if(conteneur_.begin(), conteneur_.end(),
+		std::bind(std::greater<int>(),bind(&multimap<int,Produit*>::value_type::first,placeholders::_1),prod->obtenirReference()))->second;
 }

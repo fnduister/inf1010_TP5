@@ -28,8 +28,8 @@ void GestionnaireUsagers::reinitialiser()
 
 double GestionnaireUsagers::obtenirChiffreAffaires() const
 {
-	return std::accumulate(std::begin(conteneur_), std::end(conteneur_),0,
-		[](int total, Usager* usager) {return total + usager->obtenirTotalAPayer(); });
+	return std::accumulate(std::begin(conteneur_), std::end(conteneur_),0.0,
+		[](double total, Usager* usager) {return total + usager->obtenirTotalAPayer(); });
 }
 
 void GestionnaireUsagers::afficherProfils() const
