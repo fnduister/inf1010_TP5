@@ -37,6 +37,6 @@ void GestionnaireUsagers::afficherProfils() const
 	cout << "PROFILS" << std::endl;
 	for (Usager* usager : conteneur_)
 	{
-		usager->afficherProfil();
+		usager->afficher();
 	}
 }

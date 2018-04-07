@@ -266,14 +266,14 @@ int main()
 	cout << "prix avant diminution: "<< samuel.obtenirCatalogue()->obtenirConteneur().find(6)->second->Produit::obtenirPrix() << endl;
 
 	samuel.DiminuerPrix(10);
-	cout << samuel.obtenirCatalogue()->obtenirConteneur().find(6)->second->obtenirPrix() << endl;
+	cout << double(samuel.obtenirCatalogue()->obtenirConteneur().find(6)->second->obtenirPrix()) << endl;
 	cout << samuel.obtenirCatalogue()->obtenirConteneur().find(6)->second->Produit::obtenirPrix() << endl;
 	cout << samuel.obtenirCatalogue()->obtenirConteneur().find(1)->second->obtenirPrix() << endl;
 	double s = samuel.obtenirCatalogue()->obtenirConteneur().find(6)->second->obtenirPrix();
 	double d = samuel.obtenirCatalogue()->obtenirConteneur().find(6)->second->Produit::obtenirPrix();
 	double x = samuel.obtenirCatalogue()->obtenirConteneur().find(1)->second->obtenirPrix();
 
-	tests.push_back(samuel.obtenirCatalogue()->obtenirConteneur().find(6)->second->obtenirPrix() == 63.0 &&
+	tests.push_back(samuel.obtenirCatalogue()->obtenirConteneur().find(6)->second->obtenirPrix() == 63 &&
 					samuel.obtenirCatalogue()->obtenirConteneur().find(6)->second->Produit::obtenirPrix() == 90.0 &&
 					samuel.obtenirCatalogue()->obtenirConteneur().find(1)->second->obtenirPrix() == 36);
 

@@ -32,7 +32,7 @@ string Usager::obtenirCodePostal() const
 
 double Usager::obtenirTotalAPayer() const
 {
-    return 0;
+    return 0.0;
 }
 
 void Usager::afficher() const
@@ -43,7 +43,9 @@ void Usager::afficher() const
 
 void Usager::afficherProfil()
 {
-	cout << "void";
+	cout << "\t" << nom_ << ", " << prenom_ << " (" << reference_ << ")" << endl;
+	cout << "\t\tcode postal:\t" << codePostal_ << endl;
+
 }
 
 void Usager::modifierNom(const string &nom)

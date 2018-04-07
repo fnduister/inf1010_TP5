@@ -15,11 +15,11 @@ class GestionnaireProduits:public GestionnaireGenerique<Produit, multimap<int,Pr
 {
 public:
 	GestionnaireProduits();
-//	void reinitialiserClient();
-//	void reinitialiserFournisseur();
-//	void afficher();
+	void reinitialiserClient();
+	void reinitialiserFournisseur();
+	void afficher();
 	double obtenirTotalAPayer();
-//	int obtenirTotalApayerPremium();
+	double obtenirTotalApayerPremium();
 	Produit* trouverProduitPlusCher() const;
 	vector<pair<int, Produit*>> obtenirProduitsEntre(double begin,double end);
 	Produit* obtenirProduitSuivant(Produit* prod);

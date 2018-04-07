@@ -30,8 +30,7 @@ void Fournisseur::afficherCatalogue() const
 	// TODO : À modifier
     cout << "CATALOGUE (de " << obtenirNom() << ")"
          << "\n";
-	for (const pair<int, Produit*> pairProduit : catalogue_->obtenirConteneur())
-		pairProduit.second->afficher();
+	catalogue_->afficher();
     cout << endl;
 }
 
@@ -45,9 +44,7 @@ void Fournisseur::afficher() const
 void Fournisseur::reinitialiser()
 {
 	// TODO : À modifier
-	for (const pair<int, Produit*> pairProduit : catalogue_->obtenirConteneur())
-		pairProduit.second->modifierFournisseur(nullptr);
-    catalogue_->obtenirConteneur().clear();
+	catalogue_->reinitialiserFournisseur();
 }
 
 void Fournisseur::ajouterProduit(Produit *produit)

@@ -7,9 +7,39 @@
 #include "GestionnaireProduits.h"
 #include <numeric>
 #include <functional>
+#include <iostream>
+#include "ProduitAuxEncheres.h"
 
 GestionnaireProduits::GestionnaireProduits():GestionnaireGenerique()
 {
+}
+
+void GestionnaireProduits::reinitialiserClient()
+{
+	for (const auto pairProduit : conteneur_)
+	{
+		ProduitAuxEncheres *produit = dynamic_cast<ProduitAuxEncheres *>(pairProduit.second);
+		if (produit) {
+			produit->modifierEncherisseur(nullptr);
+			produit->modifierPrix(produit->obtenirPrixInitial());
+		}
+	}
+	conteneur_.clear();
+}
+
+void GestionnaireProduits::reinitialiserFournisseur()
+{
+	for (const pair<int, Produit*> pairProduit : conteneur_)
+		pairProduit.second->modifierFournisseur(nullptr);
+	conteneur_.clear();
+}
+
+void GestionnaireProduits::afficher()
+{
+	for (const auto pairProduit : conteneur_) {
+		pairProduit.second->afficher();
+		cout << "\t\texemplaire:\t" << conteneur_.count(pairProduit.first) << std::endl;
+	}
 }
 
 double GestionnaireProduits::obtenirTotalAPayer()
@@ -22,6 +52,11 @@ double GestionnaireProduits::obtenirTotalAPayer()
 			return total + produitpair.second->obtenirPrix();
 		}
 	);
+}
+
+double GestionnaireProduits::obtenirTotalApayerPremium()
+{
+	return 0.0;
 }
 
 Produit* GestionnaireProduits::trouverProduitPlusCher() const

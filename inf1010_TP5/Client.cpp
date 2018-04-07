@@ -50,9 +50,8 @@ void Client::afficherPanier() const
 	// TODO : À modifier
     cout << "PANIER (de " << obtenirNom() << ")"
          << "\n";
-	for (const auto pairProduit : panier_->obtenirConteneur())
-		pairProduit.second->afficher();
-    cout << endl;
+	panier_->afficher();
+	cout << endl;
 }
 
 void Client::afficher() const
@@ -83,15 +82,7 @@ void Client::ajouterProduit(Produit *produit)
 void Client::reinitialiser()
 {
 	// TODO : À modifier
-	for (const auto pairProduit : panier_->obtenirConteneur())
-	{
-        ProduitAuxEncheres *produit = dynamic_cast<ProduitAuxEncheres *>(pairProduit.second);
-        if (produit) {
-            produit->modifierEncherisseur(nullptr);
-            produit->modifierPrix(produit->obtenirPrixInitial());
-        }
-    }
-    panier_->obtenirConteneur().clear();
+	panier_->reinitialiserClient();
 }
 
 Produit* Client::trouverProduitPlusCher() const

@@ -7,10 +7,10 @@ ClientPremium::ClientPremium(unsigned int joursRestants)
 {
 }
 
-ClientPremium::ClientPremium(const string &nom, const string &prenom, int identifiant,
+ClientPremium::ClientPremium(const string &nom, const string &prenom, int reference,
                              const string &codePostal, unsigned int codeClient,
                              unsigned int joursRestants)
-    : Client(nom, prenom, identifiant, codePostal, codeClient),
+    : Client(nom, prenom, reference, codePostal, codeClient),
       joursRestants_(joursRestants)
 {
 }
@@ -29,9 +29,9 @@ double ClientPremium::obtenirTotalAPayer() const
     return montant;
 }
 
-void ClientPremium::afficherProfil() const
+void ClientPremium::afficher() const
 {
-    //Client::afficherProfil();
+    Client::afficher();
     cout << "\t\tjours restants:\t" << joursRestants_ << endl;
 }
 
