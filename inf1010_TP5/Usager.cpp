@@ -41,13 +41,6 @@ void Usager::afficher() const
         << "\t\tcode postal:\t" << codePostal_ << endl;
 }
 
-void Usager::afficherProfil()
-{
-	cout << "\t" << nom_ << ", " << prenom_ << " (" << reference_ << ")" << endl;
-	cout << "\t\tcode postal:\t" << codePostal_ << endl;
-
-}
-
 void Usager::modifierNom(const string &nom)
 {
     nom_ = nom;

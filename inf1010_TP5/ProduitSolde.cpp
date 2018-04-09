@@ -14,8 +14,13 @@ ProduitSolde::ProduitSolde(Fournisseur *fournisseur, const string &nom,
 }
 
 double ProduitSolde::obtenirPrix() const
-{
-    return prix_ * ((100 - pourcentageRabais_) / 100.0);
+{	
+	// on a des pertes avec les doubles avec ces operations d'ou le round 
+	// afin d'obtenir la comparaison entre deux doubles du test 50
+	// double l = 90.0 * ((100 - 30) / 100.0); // retourne 62.99999999999999
+	// on est suppose le comparer a 63.0
+    return round(prix_ * ((100 - pourcentageRabais_) / 100.0));
+
 }
 
 void ProduitSolde::afficher() const

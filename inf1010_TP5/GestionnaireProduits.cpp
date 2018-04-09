@@ -34,7 +34,7 @@ void GestionnaireProduits::reinitialiserFournisseur()
 	conteneur_.clear();
 }
 
-void GestionnaireProduits::afficher()
+void GestionnaireProduits::afficher() const
 {
 	for (const auto pairProduit : conteneur_) {
 		pairProduit.second->afficher();
@@ -42,7 +42,7 @@ void GestionnaireProduits::afficher()
 	}
 }
 
-double GestionnaireProduits::obtenirTotalAPayer()
+double GestionnaireProduits::obtenirTotalAPayer() const
 {
 	return std::accumulate(
 		conteneur_.begin(),
@@ -54,7 +54,7 @@ double GestionnaireProduits::obtenirTotalAPayer()
 	);
 }
 
-double GestionnaireProduits::obtenirTotalApayerPremium()
+double GestionnaireProduits::obtenirTotalApayerPremium() const
 {
 	return 0.0;
 }
@@ -72,11 +72,12 @@ Produit* GestionnaireProduits::trouverProduitPlusCher() const
 			}
 		)->second;
 	}
+	//si le conteneur est vide
 	return nullptr;
 
 }
 
-vector<pair<int, Produit*>> GestionnaireProduits::obtenirProduitsEntre(double borneInf, double borneSup)
+vector<pair<int, Produit*>> GestionnaireProduits::obtenirProduitsEntre(double borneInf, double borneSup) const
 {
 	vector<pair<int, Produit*>> temp;
 	copy_if(conteneur_.begin(), conteneur_.end(), back_inserter(temp), FoncteurIntervalle(borneInf,borneSup));
@@ -86,5 +87,6 @@ vector<pair<int, Produit*>> GestionnaireProduits::obtenirProduitsEntre(double bo
 Produit* GestionnaireProduits::obtenirProduitSuivant(Produit* prod)
 {
 	return find_if(conteneur_.begin(), conteneur_.end(),
+		//deuxieme bind permet de retenir uniquement le premiere element de la pair fourni par l'algorithm
 		std::bind(std::greater<int>(),bind(&multimap<int,Produit*>::value_type::first,placeholders::_1),prod->obtenirReference()))->second;
 }

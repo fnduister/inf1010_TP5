@@ -263,17 +263,8 @@ int main()
 					ratus.trouverProduitPlusCher() == nullptr);
 
 	// TEST 50 : diminuer le prix des produits doit mettre a jour tous les produits du fournisseur
-	cout << "prix avant diminution: "<< samuel.obtenirCatalogue()->obtenirConteneur().find(6)->second->Produit::obtenirPrix() << endl;
-
 	samuel.DiminuerPrix(10);
-	cout << double(samuel.obtenirCatalogue()->obtenirConteneur().find(6)->second->obtenirPrix()) << endl;
-	cout << samuel.obtenirCatalogue()->obtenirConteneur().find(6)->second->Produit::obtenirPrix() << endl;
-	cout << samuel.obtenirCatalogue()->obtenirConteneur().find(1)->second->obtenirPrix() << endl;
-	double s = samuel.obtenirCatalogue()->obtenirConteneur().find(6)->second->obtenirPrix();
-	double d = samuel.obtenirCatalogue()->obtenirConteneur().find(6)->second->Produit::obtenirPrix();
-	double x = samuel.obtenirCatalogue()->obtenirConteneur().find(1)->second->obtenirPrix();
-
-	tests.push_back(samuel.obtenirCatalogue()->obtenirConteneur().find(6)->second->obtenirPrix() == 63 &&
+	tests.push_back(samuel.obtenirCatalogue()->obtenirConteneur().find(6)->second->obtenirPrix() == 63.0 &&
 					samuel.obtenirCatalogue()->obtenirConteneur().find(6)->second->Produit::obtenirPrix() == 90.0 &&
 					samuel.obtenirCatalogue()->obtenirConteneur().find(1)->second->obtenirPrix() == 36);
 

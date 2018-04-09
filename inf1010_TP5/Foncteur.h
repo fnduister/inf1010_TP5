@@ -57,7 +57,7 @@ public:
 	void operator () (pair<int, Produit*> pairProduit) const
 	{
 		pairProduit.second->modifierPrix(
-			pairProduit.second->Produit::obtenirPrix() - pairProduit.second->Produit::obtenirPrix() * pourcentage_ / 100.0
+			pairProduit.second->Produit::obtenirPrix() * (( 100 - pourcentage_ ) / 100.0)
 		);
 	}
 private:

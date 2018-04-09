@@ -8,24 +8,60 @@
 
 using namespace std;
 
+/**
+*  @brief Classe qui contient les informations d'un produit aux enchéres
+*  @remark classe de dérivé de Produit
+*/
 class ProduitAuxEncheres : public Produit
 {
-  public:
-    ProduitAuxEncheres(double prix = 0.0);
-    ProduitAuxEncheres(Fournisseur *fournisseur, const string &nom, int reference,
-                       double prix = 0.0);
+public:
+	/**
+	*   @brief  constructeur par paramètre
+	*	@remark constructor
+	*   @return void
+	*/
+	ProduitAuxEncheres(double prix = 0.0);
 
-    virtual double obtenirPrixInitial() const;
-    Client *obtenirEncherisseur() const;
-    virtual void afficher() const;
+	/**
+	*   @brief  constructeur par paramètre
+	*	@remark constructor
+	*   @return void
+	*/
+	ProduitAuxEncheres(Fournisseur *fournisseur, const string &nom, int reference = 0,
+		double prix = 0.0);
 
-    void modifierPrixInitial(double prixInitial);
-    void modifierEncherisseur(Client* encherisseur);
-    void mettreAJourEnchere(Client *encherisseur, double nouveauPrix);
+	/**
+	*   @brief  retourne l'attribut demandé
+	*	@remark fonction constante
+	*/
+	double obtenirPrixInitial() const;
+	Client *obtenirEncherisseur() const;
 
-  private:
-    double prixInitial_;
-    Client *encherisseur_;
+	/**
+	*   @brief  affiche les informations du produit aux enchéres
+	*	@remark fonction constante
+	*	@remark fonction virtuelle
+	*	@return void
+	*/
+	virtual void afficher() const;
+
+	/**
+	*   @brief  modifie l'attribut demandé avec le parametre
+	*   @param {double} prixInitial - prix initial du produit
+	*/
+	void modifierPrixInitial(double prixInitial);
+	void modifierEncherisseur(Client *encherisseur);
+
+
+	/**
+	*   @brief  modifie l'attribut demandé avec le parametre
+	*   @param {Client*} encherisseur - client qui veut encherir sur le produit
+	*   @param {double} nouveauPrix - prix que propose l'encherisseur
+	*/
+	void mettreAJourEnchere(Client *encherisseur, double nouveauPrix);
+private:
+	double prixInitial_;
+	Client *encherisseur_;
 };
 
 #endif
